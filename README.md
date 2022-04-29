@@ -22,7 +22,6 @@ $ ./run_container.sh
 
 ## Authors
 
-* **Clément Boin** - *re_lab creator* - [cboin](https://github.com/cboin)
 * **r1ghtwr0ng** - *Current pwn_lab maintainer*
 
 ## License
