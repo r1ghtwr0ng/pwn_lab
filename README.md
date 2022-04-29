@@ -1,4 +1,4 @@
-# re_lab
+# pwn_lab
 A portable reverse engineering and pwn environment using docker.
 
 This repository is a fork of https://github.com/cboin/re_lab that was updated to include packages useful for exploit development, support for binaries using the 32-bit i386 architecture, as well as fixing issues with outdated dependencies.
@@ -22,8 +22,8 @@ $ ./run_container.sh
 
 ## Authors
 
-* **Clément Boin** - *Initial work* - [cboin](https://github.com/cboin)
-* **r1ghtwr0ng** - *Fork maintainer*
+* **Clément Boin** - *re_lab creator* - [cboin](https://github.com/cboin)
+* **r1ghtwr0ng** - *Current pwn_lab maintainer*
 
 ## License
 
