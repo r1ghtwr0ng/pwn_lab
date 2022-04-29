@@ -61,7 +61,5 @@ RUN cd GitTools \
 
 # Install radare2
 RUN git clone https://github.com/radareorg/radare2 \
-	&& ./radare2/sys/install.sh \
+	&& ./radare2/sys/install.sh
 
-# Install angr
-RUN pip install angr
