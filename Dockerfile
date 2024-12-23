@@ -6,9 +6,9 @@ ARG username="pwn"
 ARG password="docker"
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
-ENV LANG en_US.UTF-8  
-ENV LANGUAGE en_US:en  
-ENV LC_ALL en_US.UTF-8  
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Install required packages
 RUN dpkg --add-architecture i386 \
@@ -16,35 +16,34 @@ RUN dpkg --add-architecture i386 \
     && apt-get -y upgrade \
     && apt-get install -y --no-install-recommends apt-utils \
     && apt-get install -y   \
+        binwalk             \
+        bsdiff              \
         build-essential     \
+        clang               \
+        curl                \
+        gcc-multilib        \
+        gdb                 \
+        git                 \
+        libcapstone-dev     \
         libc6:i386          \
+        libffi-dev          \
         libncurses5:i386    \
         libstdc++6:i386	    \
-        gdb                 \
-        strace              \
+        lldb                \
+        llvm                \
+        locales             \
         ltrace              \
-        xxd                 \
-        bsdiff              \
-        libcapstone-dev     \
+        nvim                \
         python3             \
         python3-pip         \
-        libffi-dev          \
-        git                 \
+        python3-binwalk     \
+        strace              \
+        sudo                \
+        tmux                \
+        tzdata              \
         vim                 \
         wget                \
-        llvm                \
-        clang               \
-        lldb                \
-        binwalk             \
-        python3-binwalk     \
-        sudo                \
-        locales             \
-        tmux                \
-        gcc-multilib        \
-        curl                \
-        wget                \
-        tzdata              \
-        git
+        xxd
 
 # Setup the locale
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
@@ -53,8 +52,8 @@ RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
 # Configure tmux configuration
 COPY .tmux.conf /home/${username}/.tmux.conf
 
-# Ensure sudo group users are not 
-# asked for a password when using 
+# Ensure sudo group users are not
+# asked for a password when using
 # sudo command by ammending sudoers file
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
